@@ -1,0 +1,17 @@
+{
+  "namespace": "my.project",
+   "name": "arrival",
+   "type": "record",
+   "fields" : [
+     {
+       "station_name" : "name",
+       "station_id" : "string",
+       "train_id" : "string",
+       "direction" : "string",
+       "train_status" : "string",
+       "prev_station_id" : "string",
+       "prev_direction" : "string",
+       "line": "string"
+     }
+   ]
+}

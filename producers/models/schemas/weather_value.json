@@ -1,0 +1,11 @@
+{
+  "namespace": "my.project",
+   "name": "weather",
+   "type": "record",
+   "fields" : [
+     { 
+       "temperature" : "string",
+       "status": "string"
+     }
+   ]
+}
