@@ -101,6 +101,12 @@ class KafkaConsumer:
         # TODO: Poll Kafka for messages. Make sure to handle any errors or exceptions.
         # Additionally, make sure you return 1 when a message is processed, and 0 when no message
         # is retrieved.
+        logger.debug("consuming from topic pattern %s", self.topic_name_pattern)
+        try:
+            message = self.consumer.poll(timeout=self.consume_timeout)
+        except SerializerError as e:
+            logger.error("failed to deserialize message %s: %s", self.topic_name_pattern, e)
+            return 0
         while True:
             message = c.poll(timeout=1.0)   
             if message is None:
